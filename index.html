@@ -411,6 +411,42 @@ main { isolation: isolate; }
 .dock .n, .badge { line-height: 1; }
 .btn--block { white-space: normal; }
 @media (max-width: 520px) { .pcard__isi .btn { align-self: stretch; } }
+
+/* ===== intro: teks naik dari bawah, kaca bening ===== */
+.intro { display: none; position: fixed; inset: 0; z-index: 200; place-items: center; overflow: hidden;
+  padding: max(20px, env(safe-area-inset-top, 0px)) max(20px, env(safe-area-inset-right, 0px)) max(20px, env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
+  background: radial-gradient(60% 50% at 50% 45%, rgba(255,255,255,.09), rgba(255,255,255,.02) 70%), rgba(255,255,255,.035);
+  -webkit-backdrop-filter: blur(26px) saturate(1.9) brightness(1.05); backdrop-filter: blur(26px) saturate(1.9) brightness(1.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.3); opacity: 1;
+  transition: opacity 1s var(--ease), transform 1.2s var(--ease), backdrop-filter 1s var(--ease), -webkit-backdrop-filter 1s var(--ease), visibility 0s 1s; }
+.intro-on .intro { display: grid; }
+.intro.out { opacity: 0; visibility: hidden; transform: scale(1.06); -webkit-backdrop-filter: blur(0) saturate(1); backdrop-filter: blur(0) saturate(1); pointer-events: none; }
+.intro__stack { position: relative; width: min(1000px, 100%); text-align: center; }
+.intro__hi { margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .05em .32em; font-family: var(--font-display); font-weight: 800; text-transform: uppercase; letter-spacing: -.02em; line-height: 1; font-size: clamp(2.3rem, 9vw, 6rem); filter: drop-shadow(0 6px 30px rgba(110,231,183,.25)); text-wrap: balance; }
+.intro__hi span { display: inline-block; opacity: 0; transform: translateY(75vh); filter: blur(14px);
+  background: linear-gradient(180deg, #ffffff 10%, rgba(255,255,255,.62)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: introRise 1.7s var(--ease) forwards; animation-delay: calc(.3s + var(--i) * .16s); }
+.intro__hi span.mint { background: linear-gradient(180deg, #d7fff0 5%, #6ee7b7 80%); -webkit-background-clip: text; background-clip: text; }
+@keyframes introRise { 55% { opacity: 1; } to { opacity: 1; transform: none; filter: blur(0); } }
+.intro__ask { position: absolute; left: 0; right: 0; top: 100%; margin-top: clamp(26px, 5vh, 44px); display: grid; justify-items: center; gap: 18px; }
+.intro__q { margin: 0; font-family: var(--font-display); font-weight: 600; letter-spacing: .16em; font-size: clamp(.82rem, 2.6vw, 1rem); color: rgba(255,255,255,.82); opacity: 0; transform: translateY(26px); animation: introUp 1.1s var(--ease) 2.3s forwards; }
+.intro__opt { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 14px; width: min(440px, 100%); padding: 10px 20px 10px 10px; border-radius: 999px; cursor: pointer; text-align: left; border: 1px solid rgba(255,255,255,.2);
+  background: linear-gradient(155deg, rgba(255,255,255,.2), rgba(255,255,255,.05) 50%, rgba(255,255,255,.1));
+  -webkit-backdrop-filter: blur(16px) saturate(1.8); backdrop-filter: blur(16px) saturate(1.8);
+  box-shadow: var(--rim), 0 20px 50px -20px rgba(0,0,0,.6); font-family: var(--font-display); font-weight: 700; letter-spacing: .04em; font-size: clamp(.86rem, 3.4vw, 1rem); color: var(--fg);
+  opacity: 0; transform: translateY(34px); animation: introUp 1.2s var(--ease) 2.7s forwards; transition: border-color .3s, background .3s, box-shadow .4s var(--ease); }
+.intro__opt b { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; line-height: 1; background: linear-gradient(180deg, #8ff1ca, #4fd9a0); color: var(--mint-ink); box-shadow: inset 0 1px 0 rgba(255,255,255,.75); }
+.intro__opt svg { width: 20px; height: 20px; transition: transform .5s var(--ease); }
+.intro__opt:hover, .intro__opt:focus-visible { border-color: rgba(110,231,183,.7); box-shadow: var(--rim), 0 24px 56px -18px rgba(110,231,183,.4); }
+.intro__opt:hover svg { transform: translateX(5px); }
+.intro__opt:active { transform: scale(.98); }
+.intro__skip { margin-top: 2px; background: none; border: 0; cursor: pointer; color: rgba(255,255,255,.55); font-size: .84rem; padding: 10px 14px; text-decoration: underline; text-underline-offset: 3px; opacity: 0; animation: introUp 1s var(--ease) 3.2s forwards; }
+.intro__skip:hover { color: var(--fg); }
+@keyframes introUp { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .intro__hi span, .intro__q, .intro__opt, .intro__skip { animation: introFade .5s forwards !important; transform: none; filter: none; }
+  @keyframes introFade { to { opacity: 1; } }
+}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 </head>
@@ -420,6 +456,17 @@ main { isolation: isolate; }
 </svg>
 
 <div class="aura" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i><i class="b4"></i></div>
+
+<div class="intro" id="intro" role="dialog" aria-modal="true" aria-labelledby="introTitle">
+  <div class="intro__stack">
+    <h1 class="intro__hi" id="introTitle"><span style="--i:0">Hallo</span><span style="--i:1">Customer</span><span class="mint" style="--i:2">Voxxa</span><span class="mint" style="--i:3">Pro</span></h1>
+    <div class="intro__ask">
+      <p class="intro__q">ADA YANG BISA KAMI BANTU?</p>
+      <button class="intro__opt" id="introBuy" type="button"><b>1</b><span>AKU MAU BELI LISENSI KEY</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <button class="intro__skip" id="introSkip" type="button">Lewati</button>
+    </div>
+  </div>
+</div>
 
 <header class="nav" id="nav">
   <div class="wrap nav__inner">
@@ -838,6 +885,23 @@ main { isolation: isolate; }
   });
 
   renderCart();
+
+  /* intro */
+  (function () {
+    var box = $("intro"); if (!box) return;
+    var root = document.documentElement, done = false;
+    root.classList.add("intro-on"); document.body.classList.add("lock");
+    function close(goBuy) {
+      if (done) return; done = true;
+      box.classList.add("out"); document.body.classList.remove("lock");
+      if (goBuy) { track("intro-beli", "Intro: mau beli key"); var t = $("produk"); if (t) setTimeout(function () { t.scrollIntoView({ behavior: reduce ? "auto" : "smooth" }); }, 250); }
+      setTimeout(function () { box.remove(); root.classList.remove("intro-on"); }, 1300);
+    }
+    $("introBuy").addEventListener("click", function () { close(true); });
+    $("introSkip").addEventListener("click", function () { close(false); });
+    addEventListener("keydown", function (e) { if (e.key === "Escape") close(false); });
+    setTimeout(function () { try { $("introBuy").focus({ preventScroll: true }); } catch (e) {} }, reduce ? 600 : 3400);
+  })();
 
   /* liquid glass: cursor specular + eased parallax of the aura */
   (function () {
