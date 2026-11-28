@@ -4,18 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Voxxa Pro Web - Beli Key Akses APK Optimizer</title>
-<meta name="description" content="Voxxa Pro APK Optimizer: Touch Manager, Pembersih RAM, Turbo Optimizer, Resolusi Changer. Key mulai Rp5.000, bayar via QRIS, konfirmasi lewat WhatsApp.">
+<meta name="description" content="Voxxa Pro APK Optimizer: Touch Manager, Pembersih RAM, Turbo Optimizer, Resolusi Changer. Key mulai Rp10.000, bayar via QRIS, konfirmasi lewat WhatsApp.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#141414">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="id_ID">
 <meta property="og:title" content="Voxxa Pro Web - Beli Key Akses APK Optimizer">
-<meta property="og:description" content="Voxxa Pro APK Optimizer: Touch Manager, Pembersih RAM, Turbo Optimizer, Resolusi Changer. Key mulai Rp5.000, bayar via QRIS, konfirmasi lewat WhatsApp.">
+<meta property="og:description" content="Voxxa Pro APK Optimizer: Touch Manager, Pembersih RAM, Turbo Optimizer, Resolusi Changer. Key mulai Rp10.000, bayar via QRIS, konfirmasi lewat WhatsApp.">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Product","name":"Voxxa Pro - Key Akses APK Optimizer","description":"Key akses untuk APK Optimizer Voxxa Pro.","offers":[
-{"@type":"Offer","name":"Key 3 Hari","price":"5000","priceCurrency":"IDR"},
 {"@type":"Offer","name":"Key 10 Hari","price":"10000","priceCurrency":"IDR"},
 {"@type":"Offer","name":"Key 1 Bulan","price":"20000","priceCurrency":"IDR"},
-{"@type":"Offer","name":"Key 1 Tahun","price":"30000","priceCurrency":"IDR"}]}</script>
+{"@type":"Offer","name":"Key 1 Tahun","price":"35000","priceCurrency":"IDR"},
+{"@type":"Offer","name":"Key Permanen","price":"65000","priceCurrency":"IDR","priceValidUntil":"2026-12-10"}]}</script>
 <style>
 /* Layout: flat dark store. Sticky nav, left-aligned hero with chips, 2x2 plan cards with outline numerals, stats strip, feature grid, steps, WhatsApp QR card, FAQ, 4-column footer. Mint accent on near-black. */
 :root {
@@ -447,6 +447,21 @@ main { isolation: isolate; }
   .intro__hi span, .intro__q, .intro__opt, .intro__skip { animation: introFade .5s forwards !important; transform: none; filter: none; }
   @keyframes introFade { to { opacity: 1; } }
 }
+
+/* kartu permanen + harga coret */
+.pcard.perm { grid-column: 1 / -1; min-height: 230px; }
+.pcard.perm .pcard__isi { max-width: 68%; }
+.pcard__was { font-size: 1.05rem; font-weight: 500; color: var(--muted); text-decoration: line-through; text-decoration-thickness: 2px; margin-left: 6px; }
+@media (max-width: 520px) { .pcard.perm .pcard__isi { max-width: 100%; } }
+
+/* 3 kartu durasi sebaris, Permanen lebar di bawahnya */
+.pcard:not(.perm) .pcard__isi { max-width: 100%; padding: 22px; }
+.pcard:not(.perm) .pcard__isi .btn { align-self: stretch; }
+.pcard:not(.perm) .pcard__ikon { top: 22px; right: 18px; transform: none; }
+.pcard:not(.perm) .pcard__ikon b { font-size: 3.6rem; }
+.pcard:not(.perm) .pcard__ikon span { font-size: .66rem; }
+@media (min-width: 1000px) { .plans { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 821px) and (max-width: 999px) { .pcard:nth-child(3) { grid-column: 1 / -1; } }
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 </head>
@@ -502,12 +517,11 @@ main { isolation: isolate; }
       <aside class="ladder reveal" aria-label="Biaya per hari tiap durasi">
         <p class="eyebrow">Biaya per hari</p>
         <ul>
-          <li><span>3 Hari</span><i style="--w:100%"></i><b>Rp1.667</b></li>
-          <li><span>10 Hari</span><i style="--w:60%;--d:.1s"></i><b>Rp1.000</b></li>
-          <li><span>1 Bulan</span><i style="--w:40%;--d:.2s"></i><b>Rp667</b></li>
-          <li><span>1 Tahun</span><i style="--w:5%;--d:.3s"></i><b>Rp82</b></li>
+          <li><span>10 Hari</span><i style="--w:100%"></i><b>Rp1.000</b></li>
+          <li><span>1 Bulan</span><i style="--w:67%;--d:.1s"></i><b>Rp667</b></li>
+          <li><span>1 Tahun</span><i style="--w:10%;--d:.2s"></i><b>Rp96</b></li>
         </ul>
-        <p class="fine">Dihitung dari harga key dibagi jumlah hari. Makin panjang durasinya, makin kecil biaya hariannya.</p>
+        <p class="fine">Dihitung dari harga key dibagi jumlah hari. Key Permanen sekali bayar, tanpa perpanjang.</p>
       </aside>
     </div>
   </section>
@@ -521,8 +535,8 @@ main { isolation: isolate; }
       </header>
       <div class="plans" id="plans"></div>
       <div class="stats reveal">
-        <div><b>4</b><span>Pilihan durasi</span></div>
-        <div><b>Rp5.000</b><span>Harga mulai dari</span></div>
+        <div><b>4</b><span>Pilihan key</span></div>
+        <div><b>Rp10.000</b><span>Harga mulai dari</span></div>
         <div><b>Android 11+</b><span>Versi didukung</span></div>
         <div><b>QRIS</b><span>Metode pembayaran</span></div>
       </div>
@@ -685,11 +699,13 @@ main { isolation: isolate; }
     try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: "event/" + name, title: title, event: true }); } catch (e) {}
   }
 
+  var PERM_END = Date.UTC(2026, 11, 10, 16, 59, 59); /* 10 Des 2026 23.59 WIB: diskon permanen berakhir */
+  var PERM_SALE = Date.now() <= PERM_END;
   var PLANS = [
-    { id: "d3", name: "3 Hari", days: 3, price: 5000, num: "3", unit: "HARI" },
     { id: "d10", name: "10 Hari", days: 10, price: 10000, num: "10", unit: "HARI" },
     { id: "d30", name: "1 Bulan", days: 30, price: 20000, num: "1", unit: "BULAN" },
-    { id: "d365", name: "1 Tahun", days: 365, price: 30000, num: "1", unit: "TAHUN", best: true }
+    { id: "d365", name: "1 Tahun", days: 365, price: 35000, num: "1", unit: "TAHUN" },
+    { id: "perm", name: "Permanen", days: 0, perm: true, price: PERM_SALE ? 65000 : 80000, was: PERM_SALE ? 80000 : 0, num: "\u221E", unit: "PERMANEN", best: true }
   ];
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   function $(id) { return document.getElementById(id); }
@@ -726,15 +742,15 @@ main { isolation: isolate; }
   var PHONE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.6"/><path d="M10.6 5.4h2.8"/></svg>';
   var CART = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2.5l2.2 10.2a1.6 1.6 0 0 0 1.6 1.3h8.1a1.6 1.6 0 0 0 1.55-1.2L21 8H6.2"/><circle cx="9.5" cy="19.5" r="1.4"/><circle cx="17" cy="19.5" r="1.4"/></svg>';
   PLANS.forEach(function (p, i) {
-    var per = p.price / p.days, save = Math.round((1 - per / base) * 100);
-    var tag = p.best ? '<span class="pcard__eyebrow top">Paling hemat</span>' : (save > 0 ? '<span class="pcard__eyebrow save">Hemat ' + save + '%</span>' : '<span class="pcard__eyebrow">Coba dulu</span>');
-    var a = el("article", "pcard reveal" + (p.best ? " best" : "")); a.style.transitionDelay = (i * .06) + "s";
+    var per = p.days ? p.price / p.days : 0, save = Math.round((1 - per / base) * 100);
+    var tag = p.perm ? '<span class="pcard__eyebrow top">' + (p.was ? 'Diskon ' + Math.round((1 - p.price / p.was) * 100) + '%' : 'Sekali bayar') + '</span>' : p.best ? '<span class="pcard__eyebrow top">Paling hemat</span>' : (save > 0 ? '<span class="pcard__eyebrow save">Hemat ' + save + '%</span>' : '<span class="pcard__eyebrow">Coba dulu</span>');
+    var a = el("article", "pcard reveal" + (p.best ? " best" : "") + (p.perm ? " perm" : "")); a.style.transitionDelay = (i * .06) + "s";
     a.innerHTML =
       '<div class="pcard__bg"></div><div class="pcard__isi">' + tag +
       '<h3 class="pcard__nama">Key ' + p.name + '</h3>' +
       '<span class="pcard__meta">' + PHONE + 'Android 11 ke atas</span>' +
-      '<div class="pcard__harga"><small>Rp</small><span class="pnum" data-to="' + p.price + '">' + nf(p.price) + '</span></div>' +
-      '<span class="pcard__per">sekitar ' + rp(per) + ' per hari</span>' +
+      '<div class="pcard__harga"><small>Rp</small><span class="pnum" data-to="' + p.price + '">' + nf(p.price) + '</span>' + (p.was ? '<s class="pcard__was">' + rp(p.was) + '</s>' : '') + '</div>' +
+      '<span class="pcard__per">' + (p.perm ? (p.was ? 'sekali bayar, berlaku selamanya. Diskon sampai 10 Desember 2026' : 'sekali bayar, berlaku selamanya') : 'sekitar ' + rp(per) + ' per hari') + '</span>' +
       '<button class="btn btn--primary pbtn" type="button" data-add="' + p.id + '">' + CART + 'Tambah ke keranjang</button></div>' +
       '<div class="pcard__ikon" aria-hidden="true"><b>' + p.num + '</b><span>' + p.unit + '</span></div>';
     plansEl.appendChild(a);
